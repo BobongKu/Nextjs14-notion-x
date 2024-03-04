@@ -1,11 +1,16 @@
-import Card from "@/components/card"
 import { Metadata } from "next"
+import HomeList from "./components/homeList"
+import { Suspense } from "react"
+import HomeListLoading from "./components/homeList-loading"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-    title: 'Bobong Blog'
+    title: 'Bobong Blog',
+    description: "Bobong's INFOSEC Blog",
 }
 
-export default function Home(){
+export default async function Home(){
+
     return (
         <section className="text-gray-400 body-font overflow-hidden">
             <div className="container xl:py-80 md:py-64 py-40 mx-auto bg-black">
@@ -19,11 +24,13 @@ export default function Home(){
               <div>
                 <span className='px-10 text-3xl font-bold font-mono'>Recent Post</span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 py-5 m-6 gap-x-12 gap-y-16">
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+              <Suspense fallback={<HomeListLoading/>}>
+                <HomeList/>
+              </Suspense>
+            <div>
+                <Link href={"/post"}>
+                <span className="font-mono hover:text-gray-200">see more...</span>
+                </Link>
             </div>
         </div>
         </section>

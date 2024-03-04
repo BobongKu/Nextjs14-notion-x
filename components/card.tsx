@@ -1,40 +1,46 @@
-export default function Card(){
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Card(post: any){
+
+    const title = post.data?.properties.이름.title[0].plain_text ?? post.post.properties.이름.title[0].plain_text
+    const description = post.data?.properties.Description.rich_text[0].plain_text ?? post.post.properties.Description.rich_text[0].plain_text;
+    const cover = post.data?.cover.external.url ?? post.post?.cover.external.url 
+    const tags = post.data?.properties.Tag.multi_select ?? post.post?.properties.Tag.multi_select
+    const date = post.data?.properties.Date.created_time ?? post.post?.properties.Date.created_time
+    const postId = post.data?.id ?? post.post?.id
     return(
-            <div className='flex items-center justify-center transition ease-in-out hover:-translate-y-2 drop-shadow-lg'>
+        <div className='flex items-center justify-center transition ease-in-out hover:-translate-y-2'>
+                <Link href={`/post/${postId}`}>                
                 <div className=' mx-auto rounded-2xl shadow-xl'>
                     <div className="grid rounded-2xl max-w-[300px] max-h-[390px] shadow-sm bg-newgray flex-col">
-                <img
-                    src="https://health.chosun.com/site/data/img_dir/2023/07/17/2023071701753_0.jpg"
+                <Image
+                    src={cover}
                     width="375"
                     height="100"
                     className="rounded-t-xl justify-center grid h-40 object-cover"
                     alt="movie.title"
                     />
                 <div className="group py-2 px-3 grid z-10">
-                    <span className="font-bold sm:text-md line-clamp-2 text-white">Cat</span>
+                    <span className="py-2 font-bold sm:text-md line-clamp-1 text-white">{title}</span>
                     <div>
-                    <span className="h-20 line-clamp-3 text-sm leading-relaxed text-gray-300 font-bold">
-                        안녕하세요 반갑습니다 이건 테스트 중인 사이트입니다 
+                    <span className="line-clamp-1 text-sm leading-relaxed text-gray-300 font-bold">
+                        {description}
                     </span>
                     </div>
-                    <div className="flex">
-                        <div className="py-1">
-                            <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">Web Hacking</span>
-                        </div>
-                        <div className="py-1">
-                            <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">Default</span>
-                        </div>
-                        <div className="py-1">
-                            <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">Default</span>
-                        </div>
+                    <div className="flex py-1">
+                    {tags.map((tag: any,) => (        
+                        <span key={tag} className="px-1 mr-2 text-gray-400 bg-black bg-opacity-30 rounded-md text-xs md:text-sm  hover:text-black hover:bg-gray-200 hover:bg-opacity-70 hover:font-bold">{tag.name}</span>        
+                    ))}
                     </div>
                 </div>
                 <div className="border-t border-linegray p-1">
-                    <span className="text-xs text-gray-400 px-3">2024년 03월 03일</span>
+                    <span className="text-xs text-gray-400 px-3">{date.split('T')[0]}</span>
                 </div>
                 </div>
                 
             </div>
+            </Link>
         </div>
     )
 }
