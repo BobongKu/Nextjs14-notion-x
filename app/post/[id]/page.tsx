@@ -8,7 +8,7 @@ export async function generateMetadata({params:{id}}:{params:{id:string}}): Prom
   const postTitle = info.properties.이름.title[0].plain_text
   const description = info.properties.Description.rich_text[0].plain_text
   return {
-    title: postTitle,
+    title: `${postTitle} - Bobong Blog`,
     description: description
   }
 }

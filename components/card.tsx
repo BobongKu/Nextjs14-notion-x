@@ -18,11 +18,11 @@ export default function Card(post: any){
                     src={cover}
                     width="375"
                     height="100"
-                    className="rounded-t-xl justify-center grid h-40 object-cover"
+                    className="rounded-t-xl justify-center grid h-40 object-none"
                     alt="movie.title"
                     />
                 <div className="group py-2 px-3 grid z-10">
-                    <span className="py-2 font-bold sm:text-md line-clamp-1 text-white">{title}</span>
+                    <span className="py-2 font-bold text-md line-clamp-1 text-white">{title}</span>
                     <div>
                     <span className="line-clamp-1 text-sm leading-relaxed text-gray-300 font-bold">
                         {description}

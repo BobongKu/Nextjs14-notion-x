@@ -207,6 +207,7 @@
   }
   
   .notion-aside-table-of-contents-header {
+    overflow: hidden;
     text-transform: uppercase;
     font-weight: 400;
     word-break: break-word;
