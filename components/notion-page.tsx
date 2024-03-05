@@ -67,7 +67,8 @@ const Modal = dynamic(
 )
 
     return (
-        <NotionRenderer showTableOfContents disableHeader recordMap={recordMap} fullPage={true} darkMode={true} components={{
+      <div>
+        <NotionRenderer disableHeader recordMap={recordMap} fullPage={true} darkMode={true} components={{
             Code,
             Collection,
             Equation,
@@ -75,6 +76,6 @@ const Modal = dynamic(
             Pdf
           }}
       />
-
+      </div>
     )
 }

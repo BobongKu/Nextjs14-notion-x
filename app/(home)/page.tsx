@@ -4,6 +4,8 @@ import { Suspense } from "react"
 import HomeListLoading from "./components/homeList-loading"
 import Link from "next/link"
 
+
+
 export const metadata: Metadata = {
     title: 'Bobong Blog',
     description: "Bobong's INFOSEC Blog",

@@ -11,4 +11,24 @@
 
 :root {
     font-family: SUITE;
+    --primary: dark;
+  --secondary: gray;
 }
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--primary);
+  }
+*::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--primary);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border: 3px solid var(--primary);
+  }
+  

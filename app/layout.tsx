@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation"
 import "../styles/globals.css"
 import Footer from "@/components/footer"
+import ScrollToTop from "@/components/scrollToTop"
 
 export const metadata = {
   title: 'Next.js',
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className="bg-black">
         <Navigation/>
         {children}
+        <ScrollToTop/>
         <Footer/>
       </body>
     </html>
