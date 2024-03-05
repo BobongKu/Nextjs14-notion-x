@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation"
 import "../styles/globals.css"
 import Footer from "@/components/footer"
 import ScrollToTop from "@/components/scrollToTop"
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: 'Next.js',
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Navigation/>
         {children}
         <ScrollToTop/>
+        <Analytics/>
         <Footer/>
       </body>
     </html>
