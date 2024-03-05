@@ -1,6 +1,6 @@
 import { Client } from "@notionhq/client"
 
-const POST_DATABASE = process.env.NOTION_POST_DATABASE
+export const POST_DATABASE = process.env.NOTION_POST_DATABASE
 export const KEY = process.env.NOTION_API_KEY
 
 const notion = new Client({auth: KEY})
@@ -26,14 +26,6 @@ export async function getAllList(data){
     };
 
     if (search) {
-      if (search.length < 2) {
-        return {
-            redirect: {
-                destination: '/posts',
-                permanent: false,
-            },
-        };
-      }
         baseQuery.filter = {
             or: [
                 {
