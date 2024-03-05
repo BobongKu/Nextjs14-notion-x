@@ -1,16 +1,15 @@
 @font-face {
-  font-family: 'D2Codeing';
-  src: url('../public/D2Coding.ttc') format('ttf');
-  font-weight: normal;
+  font-family: 'SUITE';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
 
 
 :root {
-    --notion-font: 'D2Codeing';
+    --notion-font: 'SUITE';
     --fg-color: rgb(55, 53, 47);
     --fg-color-0: rgba(55, 53, 47, 0.09);
     --fg-color-1: rgba(55, 53, 47, 0.16);

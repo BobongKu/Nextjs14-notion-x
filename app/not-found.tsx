@@ -8,7 +8,6 @@ export default function Error() {
         <div className="flex items-center justify-center min-h-screen p-5 bg-black min-w-screen">
             <Image src={img} alt={"error"}/>
         </div>
-        
         </>
     )
 }

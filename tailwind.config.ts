@@ -19,6 +19,10 @@ const config: Config = {
         'newgray':'#202020',
         'linegray' : '#424040',
       },
+      fontFamily: {
+        D2Coding: ['D2Coding'],
+        SUITE: ['SUITE'],
+      }
     },
   },
   plugins: [],

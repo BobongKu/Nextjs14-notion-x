@@ -13,7 +13,8 @@ export async function getList(){
     return posts
 }
 
-export async function getAllList(search){
+export async function getAllList(data){
+    const search = data['search']
     const baseQuery = {
         database_id: POST_DATABASE,
         sorts: [

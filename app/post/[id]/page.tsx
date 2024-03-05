@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { NotionAPI } from "notion-client";
 
 export async function generateMetadata({params:{id}}:{params:{id:string}}): Promise<Metadata> {
-  const info = await getPostInfo(id)
+  const info : any = await getPostInfo(id)
   const postTitle = info.properties.이름.title[0].plain_text
   const description = info.properties.Description.rich_text[0].plain_text
   return {

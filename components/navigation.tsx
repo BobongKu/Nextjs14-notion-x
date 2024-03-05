@@ -6,7 +6,7 @@ export default function Navigation(){
             <div className="container m-auto px-2 md:px-12 lg:px-20">
                 <div className="flex flex-wrap items-center justify-between py-2 gap-6 md:py-3 md:gap-0 relative">
                     <input type="checkbox" name="toggle_nav" id="toggle_nav" className="hidden peer"/>
-                    <div className="w-full px-6 flex justify-between lg:w-max md:px-0">
+                    <div className="px-6 flex justify-between w-max md:px-0">
                         <Link href='/'>
                             <span aria-label="Bobong" className="flex space-x-2 items-center">
                                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -41,50 +41,35 @@ export default function Navigation(){
                                 <span className=" font-bold text-gray-100 text-md">Bobong</span>
                             </span>
                         </Link>
-                        <div className="flex items-center lg:hidden max-h-10">
-                            <label role="button" htmlFor="toggle_nav" aria-label="hamburger" id="hamburger" className="relative p-1 mr-1">
-                                <div aria-hidden="true" id="line" className="m-auto h-0.5 w-6 rounded bg-gray-300 transition duration-300"></div>
-                                <div aria-hidden="true" id="line2" className="m-auto mt-1 h-0.5 w-6 rounded bg-gray-300 transition duration-300"></div>
-                            </label>
-                        </div>
+                        
                     </div>
-
-                    <div className="hidden absolute top-full transition translate-y-1 lg:peer-checked:translate-y-0 lg:translate-y-0 left-0 
-                    lg:top-0 lg:relative peer-checked:flex w-full
-                    lg:flex lg:flex-row flex-col
-                    flex-wrap justify-end items-center
-                    gap-5 p-6 rounded-xl
-                    bg-opacity-90 bg-slate-600 lg:bg-opacity-0 lg:gap-0
-                    lg:p-0
-                    lg:bg-transparent lg:w-7/12">
-                        <div className="lg:pr-4 lg:w-auto w-full lg:pt-0 ">
-                            <ul className=" 
-                            tracking-wide 
-                            font-medium 
-                            text-sm flex-col flex 
-                            lg:flex-row
-                            gap-6 lg:gap-0
-                            ">
-                                <li>
-                                <Link href="/post" passHref>
-                                    <span className="mr-5 flex items-center text-gray-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
-                                        <path fillRule="evenodd" d="M4.25 2A2.25 2.25 0 002 4.25v2.5A2.25 2.25 0 004.25 9h2.5A2.25 2.25 0 009 6.75v-2.5A2.25 2.25 0 006.75 2h-2.5zm0 9A2.25 2.25 0 002 13.25v2.5A2.25 2.25 0 004.25 18h2.5A2.25 2.25 0 009 15.75v-2.5A2.25 2.25 0 006.75 11h-2.5zm9-9A2.25 2.25 0 0011 4.25v2.5A2.25 2.25 0 0013.25 9h2.5A2.25 2.25 0 0018 6.75v-2.5A2.25 2.25 0 0015.75 2h-2.5zm0 9A2.25 2.25 0 0011 13.25v2.5A2.25 2.25 0 0013.25 18h2.5A2.25 2.25 0 0018 15.75v-2.5A2.25 2.25 0 0015.75 11h-2.5z" clipRule="evenodd" />
-                                        </svg>
-                                        <span>Posts</span>
-                                    </span>
-                                </Link>
-                                </li>
-                                <li>
-                                <span className="mr-5 flex items-center text-gray-100">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mr-2">
-                                        <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                                        <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                                    </svg>
-                                    <span>About</span>
+                    <div className="flex px-4 items-center">
+                        <div className="px-1">
+                            <Link href={'/post'}>
+                                <span> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                                </svg>
                                 </span>
-                                </li>
-                            </ul>
+                            </Link>
+                        </div>
+                        <div className="px-1">
+                            <Link href={'/profile'}>
+                                <span> 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                                </svg>
+                                </span>
+                            </Link>
+                        </div>
+                        <div className="px-1">
+                            <Link href={'/post'}>
+                                <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                </svg>
+                                </span>
+                            </Link>
                         </div>
                     </div>
                 </div>
