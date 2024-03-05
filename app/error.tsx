@@ -1,16 +1,16 @@
-"use client"
-
-import Image from "next/image";
-import img from "../public/error.gif"
-
-
-export default function Error() {
-    return(
-        <>
-        <div className="flex items-center justify-center min-h-screen p-5 bg-black min-w-screen">
-            <Image src={img} alt={"error"}/>
-        </div>
-        
-        </>
-    )
+'use client'
+ 
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string }
+  reset: () => void
+}) {
+  return (
+    <div>
+      <h2>Something went wrong!</h2>
+      <button onClick={() => reset()}>Try again</button>
+    </div>
+  )
 }
