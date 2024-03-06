@@ -3,6 +3,7 @@ import HomeList from "./components/homeList"
 import { Suspense } from "react"
 import HomeListLoading from "./components/homeList-loading"
 import Link from "next/link"
+import { revalidatePath } from "next/cache"
 
 
 
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Home(){
-
+    revalidatePath('/', 'layout')
     return (
         <section className="text-gray-400 body-font overflow-hidden">
             <div className="container xl:py-80 md:py-64 py-40 mx-auto bg-black">
