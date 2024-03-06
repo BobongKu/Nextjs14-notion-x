@@ -17,7 +17,7 @@ export default function Card(post: any){
             <div className='flex items-center justify-center transition ease-in-out hover:-translate-y-2'>
                 <div className=' mx-auto rounded-2xl shadow-xl'>
                     <div className="grid rounded-2xl max-w-[300px] max-h-[390px] shadow-sm bg-newgray flex-col">
-                        <Link href={`/post/${postId}`}>                
+                        <Link href={`/post/${title}`}>                
                             <Image
                                 src={cover}
                                 width="375"
@@ -27,7 +27,7 @@ export default function Card(post: any){
                                 />
                         </Link>
                         <div className="group py-2 px-3 grid z-10">
-                            <Link href={`/post/${postId}`}>                
+                            <Link href={`/post/${title}`}>                
                                 <div>
                                     <span className="py-2 font-bold text-md line-clamp-1 text-white">{title}</span>
                                 </div>

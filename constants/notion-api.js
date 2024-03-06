@@ -17,6 +17,20 @@ export async function getList(){
     return posts
 }
 
+export async function getPostId(id){
+    const title = decodeURIComponent(id)
+    const post = await notion.databases.query({
+        database_id: POST_DATABASE,
+        filter: {
+            property: "이름",
+            title: {
+                contains: title
+            }
+        }
+    })
+    return post.results[0].id
+}
+
 export async function getAllList(data){
     const search = data['search']
     const baseQuery = {
