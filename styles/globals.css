@@ -12,7 +12,7 @@
 :root {
     font-family: SUITE;
     --primary: dark;
-  --secondary: gray;
+  --secondary: #4e4e4e;
 }
 
 * {
