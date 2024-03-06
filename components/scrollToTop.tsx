@@ -30,8 +30,7 @@ export default function ScrollToTop(){
 
     return showButton &&(
         <div className="fixed z-30 right-10 bottom-8">
-            <button className="w-14 md:w-20 bg-gray-600 bg-opacity-20 md:border-none 
-                            hover:border-gray-600 hover:bg-opacity-60 " onClick={scrollToTop} type="button" >
+            <button className="w-14 md:w-20 md:border-none" onClick={scrollToTop} type="button" >
                 <Animation lottieJson={lottieJson}/>
             </button>
         </div>
