@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^3.0.0",
     "@notionhq/client": "^2.2.14",
     "@types/classnames": "^2.3.1",
     "@vercel/analytics": "^1.2.2",

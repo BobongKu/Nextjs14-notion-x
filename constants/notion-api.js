@@ -2,6 +2,10 @@ import { Client } from "@notionhq/client"
 
 export const POST_DATABASE = process.env.NOTION_POST_DATABASE
 export const KEY = process.env.NOTION_API_KEY
+export const repo = process.env.COMMENTS_REPO;
+export const repoId = process.env.COMMENTS_REPO_ID;
+export const category = process.env.COMMENTS_CATEGORY;
+export const categoryId = process.env.COMMENTS_CATEGORY_ID;
 
 const notion = new Client({auth: KEY})
 
