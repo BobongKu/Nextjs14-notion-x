@@ -3,6 +3,7 @@ import "../styles/globals.css"
 import Footer from "@/components/footer"
 import ScrollToTop from "@/components/scrollToTop"
 import { Analytics } from "@vercel/analytics/react"
+import Script from "next/script"
 
 export const metadata = {
   title: 'Next.js',
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5531401523745788" crossOrigin="anonymous"></script>
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5531401523745788" crossOrigin="anonymous"></Script>
         <meta name="google-adsense-account" content="ca-pub-5531401523745788"/>
       </head>
       <body className="bg-black">
