@@ -23,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     }, 
     ...(await posts.results).map((post: any) => ({
-        url: `https://bobong.blog/post/${post.id}`,
+        url: `https://bobong.blog/post/${post.properties.이름.title[0].plain_text}`,
         lastModified: `${post.properties.Date.created_time}`
       })),
   ]
