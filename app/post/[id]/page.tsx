@@ -15,7 +15,11 @@ export async function generateMetadata({params:{id}}:{params:{id:string}}): Prom
   const description = info.properties.Description.rich_text[0].plain_text
   return {
     title: `${postTitle} - Bobong Blog`,
-    description: description
+    description: description,
+    openGraph: {
+      title: postTitle,
+      description: description,
+    }
   }
 }
 
