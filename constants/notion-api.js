@@ -24,11 +24,11 @@ export async function getPostId(id){
         filter: {
             property: "이름",
             title: {
-                contains: title
+                equals: title
             }
         }
     })
-    return post.results[0].id
+    return post.results[0]?.id ?? null
 }
 
 export async function getAllList(data){
