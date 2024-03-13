@@ -13,15 +13,12 @@ export default function Search() {
 
   return (
     <form className="max-w-md mx-auto p-4 md:py-4 pt-6" onSubmit={handleSearch}>
-      <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
-        Search
-      </label>
-      <div className="relative">
+      <div className="relative bg-white rounded-md">
         <input
           type="input"
           id="default-search"
           name="search"
-          className="block w-full p-2 text-sm rounded-lg bg-gray-600 placeholder-gray-600 text-white bg-clip-text{"
+          className="block w-full p-2 text-sm text-black bg-clip-text"
           placeholder="Search"
           style={{ appearance: 'textfield' }}
         />
