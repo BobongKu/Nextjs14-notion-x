@@ -9,7 +9,7 @@ export const categoryId = process.env.COMMENTS_CATEGORY_ID;
 
 const notion = new Client({auth: KEY})
 
-export async function getList(){
+export async function get4List(){
     const posts = await notion.databases.query({
         database_id: POST_DATABASE,
         page_size: 4,
@@ -31,8 +31,7 @@ export async function getPostId(id){
     return post.results[0]?.id ?? null
 }
 
-export async function getAllList(data){
-    const search = data['search']
+export async function getList(search){
     const baseQuery = {
         database_id: POST_DATABASE,
         sorts: [
@@ -63,6 +62,12 @@ export async function getAllList(data){
                     title: {
                       contains: search
                     }
+                },
+                {
+                    property: "category",
+                    select: {
+                        equals: search
+                    }
                 }
             ]
         };
@@ -72,7 +77,38 @@ export async function getAllList(data){
     return posts
 }
 
+export async function getCategory(category,size){
+    const baseQuery = {
+        database_id: POST_DATABASE,
+        sorts: [
+          {
+          property: "Date",
+          direction: "descending",
+          },
+        ],
+        filter: {
+            property: "category",
+            select: {
+                equals: category
+            }
+        }
+    };
+
+    if(size){
+        baseQuery.page_size = size
+    }
+
+    const posts = await notion.databases.query(baseQuery)
+    return posts
+}
+
 export async function getPostInfo(postId){
     const info = await notion.pages.retrieve({page_id: postId})
     return info
+}
+
+export async function getCategoryList(){
+    const database = await notion.databases.retrieve({database_id: POST_DATABASE})
+    const categoryList = database.properties.category.select.options
+    return categoryList
 }

@@ -6,7 +6,6 @@ import Link from "next/link"
 import { revalidatePath } from "next/cache"
 
 
-
 export const metadata: Metadata = {
     title: 'Bobong Blog',
     description: "Bobong's INFOSEC Blog",
