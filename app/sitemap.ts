@@ -1,8 +1,8 @@
-import { getAllList } from '@/constants/notion-api';
+import { getList } from '@/constants/notion-api';
 import { MetadataRoute } from 'next'
  
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const posts: any = await getAllList([])
+    const posts: any = await getList()
   return [
     {
       url: 'https://bobong.blog',
