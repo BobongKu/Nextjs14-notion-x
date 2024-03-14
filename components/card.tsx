@@ -4,13 +4,14 @@ import Link from "next/link";
 
 export default function Card(post: any){
 
-    const title = post.data?.properties.이름.title[0].plain_text ?? post.post.properties.이름.title[0].plain_text
-    const description = post.data?.properties.Description.rich_text[0].plain_text ?? post.post.properties.Description.rich_text[0].plain_text;
-    const cover = post.data?.cover.external.url ?? post.post?.cover.external.url 
-    const tags = post.data?.properties.Tag.multi_select ?? post.post?.properties.Tag.multi_select
-    const date = post.data?.properties.Date.created_time ?? post.post?.properties.Date.created_time
-    const postId = post.data?.id ?? post.post?.id
-    const public_url = post.data?.public_url ?? post.post?.public_url
+    const title = post.post.properties.이름.title[0].plain_text
+    const description = post.post.properties.Description.rich_text[0].plain_text;
+    const cover = post.post?.cover.external.url 
+    const tags = post.post?.properties.Tag.multi_select
+    const category = post.post?.properties.category.select.name
+    const date = post.post?.properties.Date.created_time
+    const postId = post.post?.id
+    const public_url = post.post?.public_url
 
     if(public_url != null){
         return(
@@ -36,6 +37,9 @@ export default function Card(post: any){
                                 </div>
                             </Link>
                             <div className="flex py-1">
+                                <Link href={`/post?category=${category}`}>
+                                    <span className="px-1 mr-2 text-gray-400 bg-black bg-opacity-30 rounded-md text-xs md:text-sm  hover:text-black hover:bg-gray-200 hover:bg-opacity-70 hover:font-bold">{category}</span>        
+                                </Link> 
                             {tags.map((tag: any,) => ( 
                                 <Link key={tag.id} href={`/post?search=${tag.name}`}>
                                     <span className="px-1 mr-2 text-gray-400 bg-black bg-opacity-30 rounded-md text-xs md:text-sm  hover:text-black hover:bg-gray-200 hover:bg-opacity-70 hover:font-bold">{tag.name}</span>        
@@ -70,6 +74,9 @@ export default function Card(post: any){
                         </span>
                         </div>
                         <div className="flex py-1">
+                        <Link href={`/post?category=${category}`}>
+                                    <span className="px-1 mr-2 text-gray-400 bg-black bg-opacity-30 rounded-md text-xs md:text-sm  hover:text-black hover:bg-gray-200 hover:bg-opacity-70 hover:font-bold">{category}</span>        
+                        </Link>
                         {tags.map((tag: any,) => (
                             <Link key={tag.id} href={`/post?search=${tag.name}`}>
                                 <span className="px-1 mr-2 text-gray-400 bg-black bg-opacity-30 rounded-md text-xs md:text-sm  hover:text-black hover:bg-gray-200 hover:bg-opacity-70 hover:font-bold">{tag.name}</span>        

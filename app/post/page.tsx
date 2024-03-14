@@ -30,7 +30,7 @@ export default async function Posts({searchParams}: any) {
           </div>
           <div className="grid grid-cols-1 xl:grid-cols-3 md:grid-cols-2 py-10  xl:gap-x-20 md:gap-x-12 gap-y-16">
             {posts.results.map((post:any, index:any) => (
-                <Card key={index} data={post}/>
+                <Card key={index} post={post}/>
               ))}
           </div>
       </div>
