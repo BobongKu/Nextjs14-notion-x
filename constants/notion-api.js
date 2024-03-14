@@ -102,6 +102,20 @@ export async function getCategory(category,size){
     return posts
 }
 
+export async function getCategorySize(category){
+    const baseQuery = {
+        database_id: POST_DATABASE,
+        filter: {
+            property: "category",
+            select: {
+                equals: category
+            }
+        }
+    };
+    const posts = await notion.databases.query(baseQuery)
+    return posts.results.length
+}
+
 export async function getPostInfo(postId){
     const info = await notion.pages.retrieve({page_id: postId})
     return info
