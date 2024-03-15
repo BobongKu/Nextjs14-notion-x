@@ -7,6 +7,7 @@ export default function Error({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  reset()
   return (
     <div>
       <h2 className="text-white">Something went wrong!</h2>
