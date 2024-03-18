@@ -3,6 +3,7 @@ import { MetadataRoute } from 'next'
  
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const posts: any = await getList()
+    console.log(posts.results[0])
   return [
     {
       url: 'https://bobong.blog',
@@ -23,8 +24,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     }, 
     ...(await posts.results).map((post: any) => ({
-        url: `https://bobong.blog/post/${post.properties.이름.title[0].plain_text}`,
+        url: `https://bobong.blog/post/${encodeURIComponent(post.properties.이름.title[0].plain_text)}`,
         lastModified: `${post.properties.Date.created_time}`
-      })),
+      }))
   ]
 }
