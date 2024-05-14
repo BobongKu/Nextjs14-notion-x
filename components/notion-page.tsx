@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import '../styles/react-notion-x.css'
 import '../styles/prism-one-dark.css'
 
+
 export default function NotionPage({recordMap}: any) {
 
 const Code = dynamic(() =>
@@ -68,7 +69,7 @@ const Modal = dynamic(
 
     return (
       <div>
-        <NotionRenderer disableHeader recordMap={recordMap} fullPage={true} darkMode={true} components={{
+        <NotionRenderer fullPage disableHeader recordMap={recordMap}  darkMode={true} components={{
             Code,
             Collection,
             Equation,
