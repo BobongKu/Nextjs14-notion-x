@@ -160,7 +160,7 @@
     .notion-page-content-has-aside {
       display: flex;
       flex-direction: row;
-      width: calc((100vw + var(--notion-max-width)) / 2);
+      width: calc((90vw + var(--notion-max-width)) / 2);
     }
   
     .notion-page-content-has-aside .notion-aside {
