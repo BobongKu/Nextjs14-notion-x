@@ -69,7 +69,7 @@ const Modal = dynamic(
 
     return (
       <div>
-        <NotionRenderer fullPage disableHeader recordMap={recordMap}  darkMode={true} components={{
+        <NotionRenderer showTableOfContents fullPage disableHeader recordMap={recordMap}  darkMode={true} components={{
             Code,
             Collection,
             Equation,

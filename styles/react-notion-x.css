@@ -156,7 +156,7 @@
     flex-direction: column;
   }
   
-  @media (min-width: 300px) and (min-height: 300px) {
+  @media (min-width: 1800px) and (min-height: 300px) {
     .notion-page-content-has-aside {
       display: flex;
       flex-direction: row;
@@ -172,6 +172,7 @@
       max-width: var(--notion-max-width);
     }
   }
+
   
   .notion-page-content-inner {
     position: relative;
