@@ -5,9 +5,6 @@ import dynamic from 'next/dynamic'
 import '../styles/react-notion-x.css'
 import '../styles/prism-one-dark.css'
 
-
-export default function NotionPage({recordMap}: any) {
-
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(async (m) => {
       await Promise.all([
@@ -67,16 +64,17 @@ const Modal = dynamic(
   }
 )
 
-    return (
-      <div>
-        <NotionRenderer showTableOfContents fullPage disableHeader recordMap={recordMap}  darkMode={true} components={{
-            Code,
-            Collection,
-            Equation,
-            Modal,
-            Pdf
-          }}
-      />
-      </div>
-    )
+export default function NotionPage({recordMap}: any) {
+  return (
+    <div>
+      <NotionRenderer showTableOfContents fullPage disableHeader recordMap={recordMap}  darkMode={true} components={{
+          Code,
+          Collection,
+          Equation,
+          Modal,
+          Pdf
+        }}
+    />
+    </div>
+  )
 }

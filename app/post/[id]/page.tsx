@@ -32,18 +32,22 @@ export async function generateMetadata({params:{id}}:{params:{id:string}}): Prom
 export default async function Home({params:{id}}:{params:{id:string}}) {
   const notion = new NotionAPI();
   const title = await getPostId(id)
-  if(title !==null){
-    const recordMap = await notion.getPage(title);
-    return (
-      <main>
-        <NotionPage recordMap={recordMap} />
-        <div className="flex flex-col items-center px-4">
-          <div className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3">
-            <Comments repo={repo} repoId={repoId} category={category} categoryId={categoryId} />
+  if(title !== null){
+    try{
+      const recordMap = await notion.getPage(title);
+      return (
+        <main>
+          <NotionPage recordMap={recordMap} />
+          <div className="flex flex-col items-center px-4">
+            <div className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3">
+              <Comments repo={repo} repoId={repoId} category={category} categoryId={categoryId} />
+            </div>
           </div>
-        </div>
-      </main>
-    );
+        </main>
+      );  
+    } catch {
+      return notFound()
+    }
   }
   else{
     return notFound()  
