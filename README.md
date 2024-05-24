@@ -1,4 +1,5 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 ![image](https://github.com/BobongKu/Nextjs14-notion-x/assets/42234678/13da80f6-088c-443a-a8ee-7837482820ac)
 
 [example site](https://bobong.blog/).
