@@ -184,7 +184,7 @@
   .notion-aside {
     position: sticky;
     top: 148px;
-    z-index: 101;
+    z-index: 0;
     /* top: calc((100vh - 48px - 100%) / 2); */
   
     align-self: flex-start;
