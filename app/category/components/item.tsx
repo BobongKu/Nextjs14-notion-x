@@ -13,11 +13,13 @@ export default async function Section(data:any) {
             <hr className="border-gray-600 mb-4" />
             <div className="grid items-center mb-3">
                 {posts.results.map((post:any, index:any) => (
-                    <div className="py-1" key={index}>
-                        <Link href={`/post/${post.properties.이름.title[0].plain_text}`}>
-                            <span className="hover:text-white " >{post.properties.이름.title[0].plain_text}</span>
-                        </Link>
-                    </div>
+                    post.public_url ? (<div className="py-1" key={index}>
+                    <Link href={`/post/${post.properties.이름.title[0].plain_text}`}>
+                        <span className="hover:text-white " >{post.properties.이름.title[0].plain_text}</span>
+                    </Link>
+                </div>) : (<div className="py-1" key={index}>
+                    <span>{post.properties.이름.title[0].plain_text} 🔒</span>
+                    </div>)
                 ))}
             </div>
         </div>
