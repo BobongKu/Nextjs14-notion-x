@@ -1,3 +1,5 @@
+export const runtime = 'edge'; 
+
 import NotionPage from "@/components/notion-page";
 import { getPostId, getPostInfo } from "@/constants/notion-api";
 import { Metadata } from "next";

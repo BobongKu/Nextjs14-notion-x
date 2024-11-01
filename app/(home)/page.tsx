@@ -1,3 +1,5 @@
+export const runtime = 'edge'; 
+
 import { Metadata } from "next"
 import HomeList from "./components/homeList"
 import { Suspense } from "react"
