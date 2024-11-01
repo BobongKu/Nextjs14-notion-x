@@ -1,4 +1,3 @@
-export const runtime = 'edge'; 
 
 import Card from "@/components/card";
 import Search from "@/components/search";
